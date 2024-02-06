@@ -7,7 +7,7 @@ using Azure.Core;
 
 namespace Azure.Communication.JobRouter
 {
-    public partial class RuleEngineQueueSelectorAttachment : IUtf8JsonSerializable
+    public partial class RuleEngineQueueSelectorAttachment
     {
         /// <summary> Initializes a new instance of RuleEngineQueueSelectorAttachment. </summary>
         /// <param name="rule">
@@ -32,16 +32,6 @@ namespace Azure.Communication.JobRouter
 
             Kind = QueueSelectorAttachmentKind.RuleEngine;
             Rule = rule;
-        }
-
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("rule"u8);
-            writer.WriteObjectValue(Rule);
-            writer.WritePropertyName("kind"u8);
-            writer.WriteStringValue(Kind.ToString());
-            writer.WriteEndObject();
         }
     }
 }

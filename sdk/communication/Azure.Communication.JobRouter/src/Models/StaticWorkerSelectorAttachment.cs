@@ -7,7 +7,7 @@ using Azure.Core;
 
 namespace Azure.Communication.JobRouter
 {
-    public partial class StaticWorkerSelectorAttachment : IUtf8JsonSerializable
+    public partial class StaticWorkerSelectorAttachment
     {
         /// <summary> Initializes a new instance of StaticWorkerSelectorAttachment. </summary>
         /// <param name="workerSelector"> Describes a condition that must be met against a set of labels for worker selection. </param>
@@ -18,16 +18,6 @@ namespace Azure.Communication.JobRouter
 
             Kind = WorkerSelectorAttachmentKind.Static;
             WorkerSelector = workerSelector;
-        }
-
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("workerSelector"u8);
-            writer.WriteObjectValue(WorkerSelector);
-            writer.WritePropertyName("kind"u8);
-            writer.WriteStringValue(Kind.ToString());
-            writer.WriteEndObject();
         }
     }
 }

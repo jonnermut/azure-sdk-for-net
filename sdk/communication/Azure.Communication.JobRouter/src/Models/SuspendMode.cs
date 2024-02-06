@@ -9,21 +9,14 @@ namespace Azure.Communication.JobRouter
     /// <summary>
     /// Used to specify a match mode when no action is taken on a job.
     /// </summary>
-    public partial class SuspendMode : IUtf8JsonSerializable
+    public partial class SuspendMode
     {
         /// <summary>
         /// Constructor.
         /// </summary>
-        public SuspendMode() : this(JobMatchingModeKind.Suspend)
+        public SuspendMode()
         {
-        }
-
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("kind"u8);
-            writer.WriteStringValue(Kind.ToString());
-            writer.WriteEndObject();
+            Kind = JobMatchingModeKind.Suspend;
         }
     }
 }
