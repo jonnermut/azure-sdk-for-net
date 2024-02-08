@@ -110,6 +110,10 @@ public partial class StreamingChatCompletionsUpdate
                                 }
                                 if (deltaProperty.NameEquals("function_call"u8))
                                 {
+                                    if (deltaProperty.Value.ValueKind == JsonValueKind.Null)
+                                    {
+                                        continue;
+                                    }
                                     foreach (JsonProperty functionProperty in deltaProperty.Value.EnumerateObject())
                                     {
                                         if (functionProperty.NameEquals("name"u8))
@@ -125,6 +129,10 @@ public partial class StreamingChatCompletionsUpdate
                                 }
                                 if (deltaProperty.NameEquals("tool_calls"))
                                 {
+                                    if (deltaProperty.Value.ValueKind == JsonValueKind.Null)
+                                    {
+                                        continue;
+                                    }
                                     foreach (JsonElement toolCallElement in deltaProperty.Value.EnumerateArray())
                                     {
                                         toolCallUpdates.Add(
