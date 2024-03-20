@@ -95,7 +95,10 @@ public partial class StreamingChatCompletionsUpdate
                             {
                                 if (deltaProperty.NameEquals("role"u8))
                                 {
-                                    role = deltaProperty.Value.GetString();
+                                    if (deltaProperty.Value.ValueKind != JsonValueKind.Null)
+                                    {
+                                        role = deltaProperty.Value.GetString();
+                                    }
                                     continue;
                                 }
                                 if (deltaProperty.NameEquals("name"u8))
