@@ -37,7 +37,7 @@ public partial class StreamingFunctionToolCallUpdate
             {
                 toolCallIndex = property.Value.GetInt32();
             }
-            if (property.NameEquals("function"u8))
+            if (property.NameEquals("function"u8) && property.Value.ValueKind == JsonValueKind.Object)
             {
                 foreach (JsonProperty functionProperty in property.Value.EnumerateObject())
                 {

@@ -5,7 +5,8 @@
       Works with Azure OpenAI resources as well as the non-Azure OpenAI endpoint.
     </Description>
     <AssemblyTitle>Microsoft Azure.AI.OpenAI client library</AssemblyTitle>
-    <Version>1.0.0-beta.14</Version>
+    <Version>1.0.0-beta.14.1</Version>
+    <PackageVersion>1.0.0-beta.14.1</PackageVersion>
     <PackageTags>Microsoft Azure OpenAI</PackageTags>
     <DisableEnhancedAnalysis>true</DisableEnhancedAnalysis>
     <TargetFrameworks>$(RequiredTargetFrameworks)</TargetFrameworks>
